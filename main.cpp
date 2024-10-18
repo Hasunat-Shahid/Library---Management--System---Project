@@ -1,6 +1,13 @@
 #include<iostream>
 using namespace std;
 
+struct Book {
+    string title;
+    string author;
+    string ISBN;
+    string yearPublished;
+};
+
 int main() {
     int choice;
 
@@ -9,7 +16,7 @@ int main() {
         cout<<"1.Add a Book\n";
         cout<<"2.View All Books\n";
         cout<<"3.Search for a Book\n";
-        cout<<"4.Exit\nw";
+        cout<<"4.Exit\n";
         cout<<"Enter your choice:";
         cin>>choice;
 
@@ -30,4 +37,15 @@ int main() {
             cout<<"Invalid choice,try again\n";
         }
     }
+
+Book myBook;
+myBook.title="C++ Programming";
+myBook.author="Bjarne Stroustrup";
+myBook.ISBN="123_456789";
+myBook.yearPublished="1985";
+
+cout<<"Title:"<<myBook.title<<endl;
+cout<<"Author:"<<myBook.author<<endl;
+cout<<"ISBN:"<<myBook.ISBN<<endl;
+cout<<"Year Published:"<<myBook.yearPublished<<endl;
 }
