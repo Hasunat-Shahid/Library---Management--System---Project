@@ -8,8 +8,23 @@ struct Book {
     string yearPublished;
 };
 
+void addBook(vector<Book>&library) {
+    Book newBook;
+    cout<<"Enter title:";
+    cin>>newBook.title;
+    cout<<"Enter author:";
+    cin>>newBook.author;
+    cout<<"Enter ISBN:";
+    cin>>newBook.ISBN;
+    cout<<"Enter year published:";
+    cin>>newBook.yearPublished
+}
+
+
 int main() {
     int choice;
+
+    vector<Book>library;
 
     while(true) {
         cout<<"Library Management System\n";
