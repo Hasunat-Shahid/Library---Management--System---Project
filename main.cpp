@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 struct Book {
@@ -17,7 +18,18 @@ void addBook(vector<Book>&library) {
     cout<<"Enter ISBN:";
     cin>>newBook.ISBN;
     cout<<"Enter year published:";
-    cin>>newBook.yearPublished
+    cin>>newBook.yearPublished;
+
+    library.push_back(newBook);
+}
+
+void  viewBooks(const vector<Book>& library) {
+    for (const Book& book : library) {
+        cout<<"Title:"<<book.title<<endl;
+        cout<<"Author:"<<book.author<<endl;
+        cout<<"ISBN:"<<book.yearPublished<<endl;
+        cout<<"------------------------"<<endl;
+    }
 }
 
 
