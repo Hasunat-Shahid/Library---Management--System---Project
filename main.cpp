@@ -32,6 +32,20 @@ void  viewBooks(const vector<Book>& library) {
     }
 }
 
+void searchBookByTitle(const vector<Book>&library, const string& title){
+    bool found=false;
+    for(const Book&book:library){
+        if(book.title==title){
+            cout<<"Book found:"<<book.title<<"by"<<book.author<<endl;
+            found=true;
+            break;
+        }
+    }
+    if(!found){
+        cout<<"No book found with title:"<<title<<endl;
+    }
+}
+
 
 int main() {
     int choice;
@@ -62,6 +76,19 @@ int main() {
             break;
             default:
             cout<<"Invalid choice,try again\n";
+        }
+
+        if(choice=1){
+            addBook(library);
+        }
+        else if(choice==2){
+            viewBooks(library);
+        }
+        else if(choice==3){
+            break;
+        }
+        else{
+            cout<<"Invalid choice, try again."<<endl;
         }
     }
 
