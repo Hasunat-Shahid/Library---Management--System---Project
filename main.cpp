@@ -46,6 +46,35 @@ void searchBookByTitle(const vector<Book>&library, const string& title){
     }
 }
 
+void saveBooksToFile(const vector<Book>&library){
+    ofstream file("library.txt");
+    for(const Book&book:library){
+        file<<book.title<<","<<book.author<<","<<book.ISBN<<","<<book.yearPublished<<endl;
+    }
+    file.close();
+}
+
+void loadBooksFromFile(vector<Book>&library){
+    ifstream file("library.txt");
+    Book book;
+    while(file>>book.title>>book.author>>book.ISBN>>book.yearPublished){
+        library.push_back(book);
+    }
+    file.close();
+}
+
+ void deleteBook(vector<Book>&library,const string& title){
+      for(auto it=library.begin();it!=library.end();++it){
+          if(it->title==title){
+              libray.erase(it);
+              cout<<"Book deleted successfully."<<endl;
+              return;
+          }
+      }
+      cout<<"Book not found"<<endl;
+  }
+
+
 
 int main() {
     int choice;
