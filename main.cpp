@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<fstream>
 using namespace std;
 
 struct Book {
@@ -66,7 +67,7 @@ void loadBooksFromFile(vector<Book>&library){
  void deleteBook(vector<Book>&library,const string& title){
       for(auto it=library.begin();it!=library.end();++it){
           if(it->title==title){
-              libray.erase(it);
+              library.erase(it);
               cout<<"Book deleted successfully."<<endl;
               return;
           }
