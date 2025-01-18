@@ -138,9 +138,9 @@ int main() {
                 {
                     string deleteTitle;
                     cout << "Enter title of the book to delete: ";
-                    cin.ignore();  
+                    cin.ignore();  // To ignore any leftover newline from previous input
                     getline(cin, deleteTitle);
-                    deleteBook(library, deleteTitle); 
+                    deleteBook(library, deleteTitle);  // Pass the title argument to the function
                     break;
                 }
             case 5:
